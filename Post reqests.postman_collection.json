@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "1715e576-8e2f-4703-80e8-3d7ee1c93e5d",
+		"name": "Post reqests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create a new project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Project 1212\",\r\n    \"announcement\": \"Welcome to project Postman\",\r\n    \"show_announcement\": false,\r\n    \"suite_mode\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/{{api}}/add_project",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{api}}",
+						"add_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete project",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}{{api}}/delete_project/2",
+					"host": [
+						"{{base_url}}{{api}}"
+					],
+					"path": [
+						"delete_project",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"name\": \"Project OLD\",\r\n            \"announcement\": \"Welcome to project Postman!\",\r\n            \"show_announcement\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/{{api}}/update_project/7",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{api}}",
+						"update_project",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "{{email}}",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
